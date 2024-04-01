@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "type": "full-time",
+    "description": "We are looking for a skilled Frontend Developer to join our team. The ideal candidate should have experience with HTML, CSS, and JavaScript. Responsibilities include designing and implementing user interfaces, optimizing website performance, and collaborating with the backend team to integrate APIs.",
+    "location": "Lagos, NG",
+    "salaryRange": "$70K - $80K",
+    "company": {
+      "name": "ABC Company",
+      "description": "Company description for ABC Company",
+      "contactEmail": "john@mymail.com",
+      "contactPhone": "+234-1234567890"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Fullstack Developer",
+    "type": "part-time",
+    "description": "We are in need of a versatile Full Stack Developer who can handle both frontend and backend development. The ideal candidate should have experience with HTML, CSS, JavaScript, and a backend language like Python, Java, or Node.js. Responsibilities include designing and implementing user interfaces, developing server-side logic, and collaborating with the team to build scalable applications.",
+    "location": "Abuja, NG",
+    "salaryRange": "$80K - $90K",
+    "company": {
+      "name": "XYZ Company",
+      "description": "Company description for XYZ Company",
+      "contactEmail": "smith@mymail.com",
+      "contactPhone": "+234-9876543210"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Mobile App Developer",
+    "type": "full-time",
+    "description": "We are looking for a skilled Mobile App Developer to create and maintain mobile applications for iOS and Android platforms. The candidate should have experience with mobile app development frameworks like React Native or Flutter, as well as proficiency in JavaScript, HTML, and CSS. Responsibilities include designing and implementing user interfaces, integrating with backend APIs, and ensuring app performance and usability.",
+    "location": "Port Harcourt, NG",
+    "salaryRange": "$60K - $70K",
+    "company": {
+      "name": "PQR Company",
+      "description": "Company description for PQR Company",
+      "contactEmail": "brown@gmail.com",
+      "contactPhone": "+234-5678901234"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "type": "part-time",
+    "description": "We are seeking a talented Data Scientist to analyze and interpret complex data sets. The candidate should have expertise in statistical analysis, machine learning algorithms, and data visualization tools. Proficiency in programming languages like Python or R is required. Responsibilities include data cleaning and preprocessing, developing predictive models, and communicating insights to stakeholders.",
+    "location": "Kano, NG",
+    "salaryRange": "$70K - $80K",
+    "company": {
+      "name": "LMN Company",
+      "description": "Company description for LMN Company",
+      "contactEmail": "sarah@gmail.com",
+      "contactPhone": "+234-0123456789"
+    }
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "type": "full-time",
+    "description": "We are looking for a skilled DevOps Engineer to help us streamline our software development and deployment processes. The candidate should have experience with cloud platforms like AWS or Azure, as well as proficiency in scripting languages like Bash or Python. Responsibilities include automating infrastructure provisioning, managing CI/CD pipelines, and ensuring high availability and scalability of our applications.",
+    "location": "Ibadan, NG",
+    "salaryRange": "$80K - $90K",
+    "company": {
+      "name": "DEF Company",
+      "description": "Company description for DEF Company",
+      "contactEmail": "jerry@gmail.com",
+      "contactPhone": "+234-9876543210"
+    }
+  },
+  {
+    "id": 6,
+    "title": "JavaScript Developer",
+    "type": "part-time",
+    "description": "We are seeking a skilled JavaScript Developer to join our team. The ideal candidate should have a strong understanding of JavaScript and its frameworks, such as React or Angular. Responsibilities include developing and maintaining web applications, implementing user interfaces, and collaborating with the backend team to integrate APIs. The candidate should have experience with HTML, CSS, and version control systems like Git. Knowledge of server-side technologies like Node.js is a plus. The ability to work in a fast-paced environment and solve complex problems is essential. Join us and contribute to the development of innovative web solutions.",
+    "location": "Enugu, NG",
+    "salaryRange": "$60K - $70K",
+    "company": {
+      "name": "GHI Company",
+      "description": "Company description for GHI Company",
+      "contactEmail": "davis@gmail.com",
+      "contactPhone": "+234-5678901234"
+    }
+  }
+]
