@@ -14,7 +14,7 @@ function DevsArea() {
         <div className='card employers'>
           <h3>For Employers</h3>
           <p>List your job to find the perfect developer for the role</p>
-          <Link to='/add-jobs' className='btn btn-emp'>
+          <Link to='/add-job' className='btn btn-emp'>
             Add Jobs
           </Link>
         </div>

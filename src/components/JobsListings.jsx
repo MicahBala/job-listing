@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom'
 
 function JobsListings({ job }) {
   const [showFullDesc, setShowFullDesc] = useState(false)
+  if (!job) {
+    return null
+  }
 
-  let desc = job?.description || ''
+  let desc = job.description || ''
 
   if (!showFullDesc) {
     desc = desc.substring(0, 90) + '...'
@@ -14,7 +17,7 @@ function JobsListings({ job }) {
 
   return (
     <div className='job-card'>
-      <small>{job?.type}</small>
+      <small>{job.jobType}</small>
       <h3>{job?.title}</h3>
       <p>
         {desc}
@@ -25,13 +28,13 @@ function JobsListings({ job }) {
           {showFullDesc ? '..less' : 'more'}
         </span>
       </p>
-      <small className='salary'>{job?.salaryRange} / Year</small>
+      <small className='salary'>{job.salaryRange} / Year</small>
       <div className='card-footer'>
         <div className='map'>
-          <FaLocationPin /> {job?.location}.
+          <FaLocationPin /> {job.location}.
         </div>
         <div className='read-more'>
-          <Link to={`/job/${job?.id}`}>Read more</Link>
+          <Link to={`/jobs/${job._id}`}>Read more</Link>
         </div>
       </div>
     </div>

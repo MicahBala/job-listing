@@ -1,6 +1,6 @@
 import HomeCard from '../components/HomeCard'
 
-function JobsPage() {
+function AllJobsPage() {
   return (
     <>
       <section className='jobs-area'>
@@ -15,4 +15,4 @@ function JobsPage() {
   )
 }
 
-export default JobsPage
+export default AllJobsPage
