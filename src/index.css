@@ -497,6 +497,13 @@ ul {
   font-weight: bold;
 }
 
+/* ERROR TEXT */
+.error-text {
+  color: red;
+  font-weight: bold;
+  padding: 0 0 0.5rem;
+  font-size: smaller;
+}
 
 /* Media Query */
 @media screen and (max-width: 768px) {
