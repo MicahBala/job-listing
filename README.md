@@ -1,8 +1,39 @@
-# React + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an app that allows users to post available job listings, location and
+salary, etc for any available openings for a company.
 
-Currently, two official plugins are available:
+## Live Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link to the live project](https://example.com)
+
+## API Documentation
+
+[Link to the API documentation](https://example.com/api-docs)
+
+## Features
+
+- Feature 1: Description of feature 1.
+- Feature 2: Description of feature 2.
+- Feature 3: Description of feature 3.
+- ...
+
+## Installation
+
+1. Clone the repository:
+   `git clone https://github.com/your-username/project-name.git`
+2. Install dependencies: `npm install`
+
+## Usage
+
+1. Start the development server: `npm start`
+2. Open the project in your browser: `http://localhost:3000`
+
+## Contributing
+
+Contributions are welcome! Please follow the guidelines in
+[CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).

@@ -1,53 +1,60 @@
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import { useForm } from 'react-hook-form'
 import ErrorText from '../components/ErrorText'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Spinner from '../components/Spinner'
 
-function AddJobPage() {
+function EditJobPage() {
+  const [loading, setLoading] = useState(true)
+  const [singleJob, setSingleJob] = useState(null)
+
+  const { id } = useParams()
+
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm()
+
+  useEffect(() => {
+    const fetchSingleJob = async () => {
+      try {
+        const result = await fetch(
+          `https://job-listing-backend-m4yh.onrender.com/jobs/${id}`,
+        )
+        const res = await result.json()
+        const { data } = res
+        setLoading(false)
+        reset((formData) => ({
+          ...formData,
+          ...data,
+        }))
+      } catch (error) {
+        console.log('Error fetching data', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchSingleJob()
+  }, [id, reset])
 
   const navigate = useNavigate()
 
   const submitForm = async (data) => {
-    const {
-      title,
-      jobType,
-      description,
-      location,
-      salaryRange,
-      companyName,
-      companyDesc,
-      contactEmail,
-      contactPhone,
-    } = data
-
-    const newJob = {
-      title,
-      jobType,
-      description,
-      location,
-      salaryRange,
-      companyName,
-      companyDesc,
-      contactEmail,
-      contactPhone,
-    }
     try {
+      // Submit form logic here
       const result = await fetch(
-        'https://job-listing-backend-m4yh.onrender.com/jobs',
+        `https://job-listing-backend-m4yh.onrender.com/jobs/${id}`,
         {
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(newJob),
+          body: JSON.stringify(data),
         },
       )
 
@@ -55,20 +62,21 @@ function AddJobPage() {
         throw new Error('Something went wrong. Please try again later.')
       }
 
-      toast.success('Job added successfully')
+      toast.success('Job edited successfully')
 
       return navigate('/jobs')
     } catch (error) {
-      setError('root', { message: error.message })
-      toast.error(error.message)
+      console.log('Error submitting form', error)
     }
   }
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <div className='add-job'>
       <div className='add-job-content'>
         <div className='add-job-form'>
-          <h2 className='add-job-title'>Add Job</h2>
+          <h2 className='add-job-title'>Edit Job</h2>
 
           <form
             className='form'
@@ -114,7 +122,7 @@ function AddJobPage() {
               name='salaryRange'
               {...register('salaryRange', { required: true })}
             >
-              <option></option>
+              <option>{}</option>
               <option value='under $50K'>Under $50K</option>
               <option value='$50K - $70K'>$50K - $70K</option>
               <option value='$70K - $90K'>$70K - $90K</option>
@@ -184,7 +192,7 @@ function AddJobPage() {
             />
 
             <button disabled={isSubmitting} className='btn btn-add-job'>
-              {isSubmitting ? 'Submitting...' : 'Add Job'}
+              {isSubmitting ? 'Submitting...' : 'Update Job'}
             </button>
           </form>
         </div>
@@ -193,4 +201,4 @@ function AddJobPage() {
   )
 }
 
-export default AddJobPage
+export default EditJobPage

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { IoArrowBackSharp } from 'react-icons/io5'
 import { FaLocationPin } from 'react-icons/fa6'
+import { toast } from 'react-toastify'
 
 import Spinner from '../components/Spinner'
 
@@ -10,6 +11,7 @@ function SingleJobPage() {
   const [loading, setLoading] = useState(true)
 
   const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchSingleJob = async () => {
@@ -19,7 +21,6 @@ function SingleJobPage() {
         )
         const res = await result.json()
         setSingleJob(res.data)
-        // console.log(res.data)
       } catch (error) {
         console.log('Error fetching data', error)
       } finally {
@@ -29,6 +30,37 @@ function SingleJobPage() {
 
     fetchSingleJob()
   }, [id])
+
+  const deleteJob = async () => {
+    const confirm = window.confirm('Are you sure you want to delete this job?')
+    if (!confirm) return
+    setLoading(true)
+    try {
+      const result = await fetch(
+        `https://job-listing-backend-m4yh.onrender.com/jobs/${id}`,
+        {
+          method: 'DELETE',
+        },
+      )
+
+      if (!result.ok) {
+        throw new Error('Something went wrong. Please try again later.')
+      }
+
+      toast.success('Job deleted successfuly')
+
+      navigate('/jobs')
+    } catch (error) {
+      console.log('Error deleting job', error)
+      toast.error(error.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // const handleEdit = () => {
+  //   navigate(`/edit-job/${id}`)
+  // }
 
   return loading ? (
     <Spinner />
@@ -72,8 +104,15 @@ function SingleJobPage() {
           </div>
           <div className='manage-job'>
             <h3>Manage Job</h3>
-            <button className='btn btn-edit'>Edit Job</button>
-            <button className='btn btn-delete'>Delete Job</button>
+            <button
+              onClick={() => navigate(`/edit-job/${id}`)}
+              className='btn btn-edit'
+            >
+              Edit Job
+            </button>
+            <button onClick={deleteJob} className='btn btn-delete'>
+              {loading ? 'Deleting...' : 'Delete Job'}
+            </button>
           </div>
         </div>
       </div>
