@@ -59,6 +59,18 @@ body {
   width: 250px;
 }
 
+.menu-icon {
+  /* padding: 0 0 0 1rem; */
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 0.5rem 0 0;
+  display: none;
+}
+
 ul {
   display: flex;
   justify-content: space-between;
@@ -511,8 +523,53 @@ ul {
     width: 95%;
   }
 
+  .wrapper-navbar {
+    position: relative;
+  }
+
   .menu {
-    display: none;
+    width: 100px;
+    background-color: #3333E0;
+    margin: 0 -80px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 5px;
+    margin-top: 50px;
+    transition: all 0.5s;
+  }
+
+  .menu-icon {
+    display: block;
+    right: -60px;
+  }
+
+  .hide-menu {
+    margin: 0 -180px 0 0;
+  }
+
+  .show-menu {
+    margin: 50px -80px 0 0;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: solid 1px red; */
+  }
+
+  .menu a {
+    /* font-weight: 200;
+      padding: 0.5rem;
+      border-radius: 5px; */
+  }
+
+  .menu a.active,
+  .menu a:hover {
+    color: #fff;
+    background-color: #3333E0;
+    text-decoration: underline;
+    font-weight: bold;
   }
 
   .hero-content {
@@ -538,6 +595,10 @@ ul {
   .single-job-main-content,
   .single-job-side-content {
     width: 100%;
+  }
+
+  .add-job-form {
+    width: 90%;
   }
 }
 
