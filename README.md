@@ -5,17 +5,17 @@ salary, etc for any available openings for a company.
 
 ## Live Project
 
-[Link to the live project](https://example.com)
+[Link to the live project](https://job-listing-mic.netlify.app/)
 
 ## API Documentation
 
-[Link to the API documentation](https://example.com/api-docs)
+[Link to the API documentation](https://job-listing-backend-m4yh.onrender.com/api-docs/)
 
 ## Features
 
-- Feature 1: Description of feature 1.
-- Feature 2: Description of feature 2.
-- Feature 3: Description of feature 3.
+- Feature 1: Add Job posting
+- Feature 2: Delete Job posting
+- Feature 3: Edit Job posting
 - ...
 
 ## Installation
@@ -37,3 +37,7 @@ Contributions are welcome! Please follow the guidelines in
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## Author
+
+Micah Yunana Bala

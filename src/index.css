@@ -559,11 +559,11 @@ ul {
     /* border: solid 1px red; */
   }
 
-  .menu a {
-    /* font-weight: 200;
+  /* .menu a {
+    font-weight: 200;
       padding: 0.5rem;
-      border-radius: 5px; */
-  }
+      border-radius: 5px;
+  } */
 
   .menu a.active,
   .menu a:hover {
